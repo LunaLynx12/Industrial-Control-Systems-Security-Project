@@ -117,7 +117,7 @@ Stable : 20ms: BTN_PRESSED (after 4 consistent samples)
 ## Performance Characteristics
 |Metric|Value|Conditions|
 |---|---|---|
-|ISR Execution Time|18μs|ATmega328P @16MHz|
+|ISR Execution Time|18μs|ATmega32 @16MHz|
 |Memory Usage|6 bytes|2 buttons|
 |Max Button Frequency|50Hz|10ms min press duration|
 

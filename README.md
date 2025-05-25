@@ -55,11 +55,11 @@ project
 ## Development Setup
 ```bash
 # Build commands
-avr-gcc -mmcu=atmega328p -Os *.c -o firmware.elf
+avr-gcc -mmcu=atmega32 -Os *.c -o firmware.elf
 avr-objcopy -O ihex firmware.elf firmware.hex
 ```
 
 # Proteus Simulation:
 1. Load "Industrial_Security.pdsprj"
-2. Program ATmega328P with firmware.hex
+2. Program ATmega32 with firmware.hex
 3. Start simulation (Ctrl+B)

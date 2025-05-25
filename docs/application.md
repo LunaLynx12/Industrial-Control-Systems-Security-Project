@@ -81,7 +81,7 @@ led_drv_toggle(LED_RIGHT);
 
 ### Timing Constraints:
 * Guaranteed execution every 100ms (±1ms)
-* Completes in <50μs (measured on ATmega328P @16MHz)
+* Completes in <50μs (measured on ATmega32 @16MHz)
 
 ### Memory Protection:
 * All variables declared `static volatile`

@@ -87,7 +87,7 @@ B -->|No| D[Return Safely]
 
 |Metric|Value|Conditions|
 |----|----|----|
-|Function Latency|0.5μs|ATmega328P @16MHz|
+|Function Latency|0.5μs|ATmega32 @16MHz|
 |ISR Safety|Fully reentrant|No shared state|
 |Code Size|42 bytes|Optimized for -Os|
 

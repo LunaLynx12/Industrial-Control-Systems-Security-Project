@@ -116,7 +116,7 @@ static const uint8_t r_right[80] = {...};
 ## Performance Characteristics
 |Metric|Value|Conditions|
 |---|---|---|
-|Processing Speed|320μs/block|ATmega328P @16MHz|
+|Processing Speed|320μs/block|ATmega32 @16MHz|
 |Memory Usage|120 bytes RAM|Includes context|
 |Code Size|1.8KB Flash|Optimized for -Os|
 |Verification Time|65ms|Full 2KB via 50ms chunks|
