@@ -1,5 +1,5 @@
 /*
- * cysec_drv.h
+ * application.h
  *  Description: Header file for the application
  *
  *  Created on: April 16, 2025

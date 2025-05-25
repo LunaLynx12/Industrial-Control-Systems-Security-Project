@@ -60,6 +60,11 @@ btn_drv_state right_btn_state;
 /*  Global function implementation */
 /*#################################*/
 
+/* Function name: application_init
+   Description: The initialization function of the application
+   Function parameters:
+	 None
+*/
 void application_init() {
 	left_btn_state = btn_drv_read(BTN_LEFT);
 	right_btn_state = btn_drv_read(BTN_RIGHT);
@@ -70,6 +75,11 @@ void application_init() {
 	}
 }
 
+/* Function name: application_main
+   Description: The main function for the application that will be called cyclically from the OS; triggers internal proccesing inside the driver
+   Function parameters:
+	  None
+*/
 void application_main() {
 	btn_drv_state left_btn_current_state = btn_drv_read(BTN_LEFT);
 	btn_drv_state right_btn_current_state = btn_drv_read(BTN_RIGHT);

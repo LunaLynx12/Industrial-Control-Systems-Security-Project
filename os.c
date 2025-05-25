@@ -45,7 +45,6 @@ volatile uint8_t  OS_u8Cnt50ms;
 volatile uint16_t OS_u16Cnt100ms;
 volatile uint16_t OS_u16Cnt500ms;
 
-
 /*#################################*/
 /*        Local ROM data           */
 /*#################################*/
@@ -54,8 +53,7 @@ volatile uint16_t OS_u16Cnt500ms;
 /*        Local RAM data           */
 /*#################################*/
 uint16_t startTimer = 0;
-uint16_t applicationTimer = 0;
-uint8_t  systemInitialized = 0;
+uint16_t cySecTimer = 0;
 
 /*#################################*/
 /*    Local function declaration   */
@@ -72,7 +70,6 @@ void OS_vTaskInitialization(void)
 	led_drv_init();
 	btn_drv_init();
 	application_init();
-	systemInitialized = 1;
 	
 }
 
@@ -95,22 +92,25 @@ void OS_vCyclicTask5ms(void)
 
 void OS_vCyclicTask10ms(void)
 {
+	cySecTimer++;
+	if(cySecTimer > 28)
+	{
+		cysec_drv_main();
+        cySecTimer = 0;
+	}
 		 
 }
 
 void OS_vCyclicTask50ms(void)
 {
-	applicationTimer++;
-	if(systemInitialized && applicationTimer > 5)
-	{
-		cysec_drv_main();
-        applicationTimer = 0;
-	}
+
 }
 
 void OS_vCyclicTask100ms(void)
 {
+	
 	application_main();
+  
 }
 
 void OS_vCyclicTask500ms(void)
@@ -134,7 +134,6 @@ void OS_vStartFreeRunTimer(void)
 ISR(TIMER0_COMP_vect)
 {
    OS_vCyclicTask5ms();
-
    /*Increase counters used for other OS cyclic functions*/
    OS_u8Cnt10ms++;
    OS_u8Cnt50ms++;
